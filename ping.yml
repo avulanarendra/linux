@@ -1,0 +1,13 @@
+---
+- name: check the connectivity of the Linux servers
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: ping the linux server
+    ping:
+    register: ping_check
+
+  - name: print debug message
+    debug:
+      msg: "{{ ping_check }}"
+...
